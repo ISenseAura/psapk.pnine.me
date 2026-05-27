@@ -1,0 +1,281 @@
+:root {
+	--bg: #121a2e;
+	--bg-deep: #0a1020;
+	--primary: #e3350d;
+	--primary-dark: #b82a0a;
+	--yellow: #ffcb05;
+	--blue: #3b4cca;
+	--text: #f8fafc;
+	--muted: #94a3b8;
+	--card: rgba(18, 26, 46, 0.72);
+	--font: 'Outfit', system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-family: var(--font);
+	background: var(--bg-deep);
+	color: var(--text);
+	line-height: 1.5;
+	overflow-x: hidden;
+}
+
+.bg {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: -1;
+	overflow: hidden;
+}
+
+.bg-glow {
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(circle at 15% 12%, rgba(227, 53, 13, 0.22), transparent 42%),
+		radial-gradient(circle at 85% 18%, rgba(59, 76, 202, 0.18), transparent 40%),
+		radial-gradient(circle at 50% 100%, rgba(255, 203, 5, 0.1), transparent 45%),
+		linear-gradient(180deg, var(--bg-deep), var(--bg));
+}
+
+.bg-glow::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-image:
+		radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+	background-size: 28px 28px;
+	mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 70%);
+}
+
+.sprite {
+	position: absolute;
+	width: 96px;
+	height: 96px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
+	opacity: 0.55;
+	animation: float 6s ease-in-out infinite;
+}
+
+.sprite-a {
+	top: 8%;
+	right: 6%;
+	background-image: url('https://play.pokemonshowdown.com/sprites/gen5/porygon.png');
+}
+
+.sprite-b {
+	bottom: 12%;
+	left: 4%;
+	background-image: url('https://play.pokemonshowdown.com/sprites/gen5/magnemite.png');
+	animation-delay: -2s;
+	animation-duration: 7s;
+}
+
+.sprite-c {
+	top: 42%;
+	left: 2%;
+	width: 80px;
+	height: 80px;
+	background-image: url('https://play.pokemonshowdown.com/sprites/gen5/porygon2.png');
+	animation-delay: -1s;
+	animation-duration: 8s;
+	opacity: 0.45;
+}
+
+.sprite-d {
+	top: 18%;
+	left: 12%;
+	width: 72px;
+	height: 72px;
+	background-image: url('https://play.pokemonshowdown.com/sprites/gen5/rotom.png');
+	animation-delay: -3s;
+	animation-duration: 6.5s;
+	opacity: 0.4;
+}
+
+.sprite-e {
+	bottom: 28%;
+	right: 8%;
+	width: 84px;
+	height: 84px;
+	background-image: url('https://play.pokemonshowdown.com/sprites/gen5/klinklang.png');
+	animation-delay: -4s;
+	animation-duration: 7.5s;
+	opacity: 0.45;
+}
+
+.sprite-f {
+	top: 55%;
+	right: 2%;
+	width: 76px;
+	height: 76px;
+	background-image: url('https://play.pokemonshowdown.com/sprites/gen5/dedenne.png');
+	animation-delay: -2.5s;
+	animation-duration: 6s;
+	opacity: 0.4;
+}
+
+.page {
+	position: relative;
+	width: min(640px, calc(100% - 2rem));
+	margin: 0 auto;
+	padding: 3rem 0 2rem;
+	text-align: center;
+}
+
+.hero {
+	margin-bottom: 2.5rem;
+}
+
+.logo {
+	margin: 0 auto 1rem;
+	border-radius: 1.25rem;
+	box-shadow:
+		0 0 0 3px rgba(255, 203, 5, 0.35),
+		0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.hero h1 {
+	margin: 0 0 0.35rem;
+	font-size: 2.4rem;
+	font-weight: 800;
+	letter-spacing: -0.03em;
+	background: linear-gradient(135deg, var(--yellow) 0%, #fff 45%, var(--primary) 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.hero p {
+	margin: 0 0 1.5rem;
+	color: var(--muted);
+	font-weight: 600;
+}
+
+.btn {
+	display: inline-block;
+	padding: 0.9rem 1.65rem;
+	border-radius: 999px;
+	background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+	color: white;
+	font-weight: 800;
+	text-decoration: none;
+	box-shadow:
+		0 0 0 2px rgba(255, 203, 5, 0.45),
+		0 10px 28px rgba(227, 53, 13, 0.35);
+	transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn:hover {
+	transform: translateY(-1px);
+	box-shadow:
+		0 0 0 2px rgba(255, 203, 5, 0.6),
+		0 14px 32px rgba(227, 53, 13, 0.42);
+}
+
+.shots {
+	display: flex;
+	gap: 0.75rem;
+	overflow-x: auto;
+	padding: 0.25rem 0 1rem;
+	-webkit-overflow-scrolling: touch;
+	scroll-snap-type: x mandatory;
+}
+
+.shots img {
+	flex: 0 0 min(42vw, 160px);
+	width: min(42vw, 160px);
+	height: auto;
+	border-radius: 1rem;
+	border: 2px solid rgba(59, 76, 202, 0.35);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+	scroll-snap-align: center;
+	background: #000;
+}
+
+.footer {
+	margin-top: 1rem;
+	padding-top: 1rem;
+	border-top: 1px solid rgba(255, 203, 5, 0.15);
+	color: var(--muted);
+	font-size: 0.85rem;
+}
+
+.footer p {
+	margin: 0.35rem 0;
+}
+
+.footer p:first-child {
+	color: var(--yellow);
+	font-weight: 600;
+}
+
+.footer a {
+	color: var(--muted);
+}
+
+.footer a:hover {
+	color: var(--text);
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-12px);
+	}
+}
+
+@media (min-width: 720px) {
+	.sprite {
+		width: 120px;
+		height: 120px;
+		opacity: 0.7;
+	}
+}
+
+@media (max-width: 480px) {
+	.sprite {
+		width: 64px;
+		height: 64px;
+		opacity: 0.35;
+	}
+
+	.sprite-a {
+		right: 2%;
+	}
+
+	.sprite-b {
+		left: 0;
+	}
+
+	.sprite-c,
+	.sprite-e {
+		display: none;
+	}
+
+	.sprite-d {
+		width: 56px;
+		height: 56px;
+		left: 0;
+		top: 22%;
+	}
+
+	.sprite-f {
+		width: 56px;
+		height: 56px;
+		right: 0;
+	}
+}
