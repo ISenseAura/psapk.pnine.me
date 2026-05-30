@@ -183,11 +183,113 @@ body {
 		0 14px 32px rgba(227, 53, 13, 0.42);
 }
 
+.hero-version {
+	margin: 0.65rem 0 0;
+	font-size: 0.8rem;
+	font-weight: 600;
+	color: var(--muted);
+	letter-spacing: 0.04em;
+}
+
+.compat {
+	margin: 1.75rem auto 0;
+	max-width: 28rem;
+	padding: 1rem 1.15rem;
+	border-radius: 1rem;
+	background: var(--card);
+	border: 1px solid rgba(59, 76, 202, 0.25);
+	text-align: left;
+}
+
+.compat-title {
+	margin: 0 0 0.5rem;
+	font-size: 0.85rem;
+	font-weight: 800;
+	color: var(--yellow);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+
+.compat-list {
+	margin: 0 0 0.75rem;
+	padding-left: 1.15rem;
+	color: var(--text);
+	font-size: 0.88rem;
+	font-weight: 500;
+}
+
+.compat-list li + li {
+	margin-top: 0.35rem;
+}
+
+.compat-note {
+	margin: 0;
+	font-size: 0.8rem;
+	color: var(--muted);
+	line-height: 1.45;
+}
+
+.whats-new {
+	margin-bottom: 2.5rem;
+	text-align: left;
+}
+
+.whats-new h2 {
+	margin: 0 0 0.35rem;
+	font-size: 1.35rem;
+	font-weight: 800;
+	text-align: center;
+	color: var(--yellow);
+	letter-spacing: -0.02em;
+}
+
+.whats-new-lead {
+	margin: 0 0 1.25rem;
+	text-align: center;
+	color: var(--muted);
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+.whats-new-grid {
+	display: grid;
+	gap: 0.75rem;
+}
+
+.whats-new-card {
+	padding: 1rem 1.1rem;
+	border-radius: 1rem;
+	background: var(--card);
+	border: 1px solid rgba(59, 76, 202, 0.3);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(8px);
+}
+
+.whats-new-card h3 {
+	margin: 0 0 0.6rem;
+	font-size: 0.95rem;
+	font-weight: 800;
+	color: var(--text);
+}
+
+.whats-new-card ul {
+	margin: 0;
+	padding-left: 1.15rem;
+	color: var(--muted);
+	font-size: 0.88rem;
+	font-weight: 500;
+}
+
+.whats-new-card li + li {
+	margin-top: 0.35rem;
+}
+
 .shots {
 	display: flex;
 	gap: 0.75rem;
 	overflow-x: auto;
 	padding: 0.25rem 0 1rem;
+	margin-bottom: 2rem;
 	-webkit-overflow-scrolling: touch;
 	scroll-snap-type: x mandatory;
 }
@@ -243,6 +345,10 @@ body {
 		width: 120px;
 		height: 120px;
 		opacity: 0.7;
+	}
+
+	.whats-new-grid {
+		grid-template-columns: 1fr 1fr;
 	}
 }
 
