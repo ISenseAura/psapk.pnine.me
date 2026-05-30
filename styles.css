@@ -330,6 +330,140 @@ body {
 	color: var(--text);
 }
 
+/* ——— Article / blog ——— */
+
+.page-article {
+	text-align: left;
+	width: min(680px, calc(100% - 2rem));
+}
+
+.article-header {
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.back-link {
+	display: inline-block;
+	margin-bottom: 0.75rem;
+	color: var(--muted);
+	font-size: 0.9rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.back-link:hover {
+	color: var(--yellow);
+}
+
+.article-meta {
+	margin: 0 0 0.5rem;
+	color: var(--muted);
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+.article-header h1 {
+	margin: 0 0 0.5rem;
+	font-size: 2rem;
+	font-weight: 800;
+	letter-spacing: -0.03em;
+	color: var(--text);
+}
+
+.article-lead {
+	margin: 0 auto;
+	color: var(--muted);
+	font-size: 1.05rem;
+	font-weight: 500;
+	line-height: 1.55;
+	max-width: 36rem;
+}
+
+.article {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	margin-bottom: 2.5rem;
+}
+
+.article section {
+	padding: 1.25rem 1.35rem;
+	border-radius: 1rem;
+	background: var(--card);
+	border: 1px solid rgba(59, 76, 202, 0.25);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.article h2 {
+	margin: 0 0 0.85rem;
+	font-size: 1.25rem;
+	font-weight: 800;
+	color: var(--yellow);
+	letter-spacing: -0.02em;
+}
+
+.article h3 {
+	margin: 1.25rem 0 0.5rem;
+	font-size: 1rem;
+	font-weight: 800;
+	color: var(--text);
+}
+
+.article h3:first-of-type {
+	margin-top: 0.5rem;
+}
+
+.article p {
+	margin: 0 0 0.85rem;
+	color: var(--text);
+	font-size: 0.95rem;
+	line-height: 1.65;
+	font-weight: 450;
+}
+
+.article p:last-child {
+	margin-bottom: 0;
+}
+
+.article ul {
+	margin: 0 0 0.85rem;
+	padding-left: 1.25rem;
+	color: var(--muted);
+	font-size: 0.92rem;
+	line-height: 1.6;
+}
+
+.article li + li {
+	margin-top: 0.4rem;
+}
+
+.article code {
+	font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+	font-size: 0.85em;
+	padding: 0.1em 0.35em;
+	border-radius: 0.25rem;
+	background: rgba(59, 76, 202, 0.2);
+	color: var(--text);
+}
+
+.article a {
+	color: var(--yellow);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.article a:hover {
+	color: var(--text);
+}
+
+.article-cta {
+	text-align: center;
+}
+
+.article-cta .btn {
+	margin-top: 0.5rem;
+}
+
 @keyframes float {
 	0%,
 	100% {

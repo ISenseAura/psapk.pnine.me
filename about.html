@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="About PS-X — what it is, what's built, what's coming, and how to send feedback." />
+	<meta name="theme-color" content="#1a2744" />
+	<title>About PS-X</title>
+	<link rel="icon" href="assets/favicon.png" type="image/png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<div class="bg" aria-hidden="true">
+		<div class="bg-glow"></div>
+		<div class="sprite sprite-a"></div>
+		<div class="sprite sprite-b"></div>
+		<div class="sprite sprite-c"></div>
+		<div class="sprite sprite-d"></div>
+		<div class="sprite sprite-e"></div>
+		<div class="sprite sprite-f"></div>
+	</div>
+	<main class="page page-article">
+		<header class="article-header">
+			<a class="back-link" href="index.html">← PS-X</a>
+			<p class="article-meta">May 2026 · v1.2.0</p>
+			<h1>About PS-X</h1>
+			<p class="article-lead">An unofficial Pokémon Showdown client built for Android — chat, ladder, battles, and teambuilding in your pocket.</p>
+		</header>
+
+		<article class="article">
+			<section>
+				<h2>What is PS-X?</h2>
+				<p>
+					<strong>PS-X</strong> (PS Experience) is a third-party mobile app for
+					<a href="https://play.pokemonshowdown.com/" target="_blank" rel="noopener">Pokémon Showdown</a>.
+					It connects to the same servers as the website, so you play against the same people, use the same ladder,
+					and chat in the same rooms — just through an interface designed for phones.
+				</p>
+				<p>
+					This is a passion project, not an official Smogon or Pokémon Showdown product.
+					There is no Play Store listing yet; you install it by downloading the APK from this site.
+				</p>
+				<p>
+					The goal is simple: make Showdown feel native on mobile.
+					Bigger tap targets, tabs instead of browser panels, notifications when something important happens,
+					and a home screen that shows your active battles at a glance.
+				</p>
+			</section>
+
+			<section>
+				<h2>What’s implemented</h2>
+				<p>Version 1.1 is a real daily driver for many players. Here’s what works today.</p>
+
+				<h3>Getting online</h3>
+				<ul>
+					<li>Connect to the main Showdown server over WebSocket</li>
+					<li>Play as a guest, log in with a password, or sign in with Google (for Gmail-linked accounts)</li>
+					<li>Register a new account in-app</li>
+					<li>Change your name, pick an avatar, log out</li>
+					<li>Auto-reconnect when your connection drops, with a banner and optional push alert</li>
+				</ul>
+
+				<h3>Home &amp; navigation</h3>
+				<ul>
+					<li>Home tab with news, quick links, and your active battles</li>
+					<li>Chats, Battles, and You tabs</li>
+					<li>Ten color themes (dark, light, midnight, Showdown-style, and more)</li>
+					<li>Onboarding intro for first-time users</li>
+				</ul>
+
+				<h3>Chat &amp; rooms</h3>
+				<ul>
+					<li>Lobby and public chat rooms — join, leave, browse rooms</li>
+					<li>Private messages and a DM list</li>
+					<li>Message bubbles, timestamps, compact mode, colored usernames</li>
+					<li>User list per room; tap a name to open their profile</li>
+					<li>Highlights and badges when someone mentions you or sends a PM</li>
+					<li>In-app toasts and background push notifications (optional)</li>
+					<li>Slash commands: <code>/join</code>, <code>/pm</code>, <code>/nick</code>, <code>/ignore</code>, and many more</li>
+					<li>Challenge friends from PMs</li>
+					<li>Moderation menu — long-press a message or tap ⋯ on a user’s profile (ignore, report; mute/ban/lock for staff)</li>
+					<li>Server popups and many HTML room pages (ladder tables, help forms, etc.)</li>
+				</ul>
+
+				<h3>Battles</h3>
+				<ul>
+					<li>Full move and switch controls with tap-friendly buttons</li>
+					<li>Team preview, force switch, choice lock, forfeit</li>
+					<li>Battle scene with sprites, HP bars, weather, and side conditions</li>
+					<li>Turn animations — switches, faints, move effects, smooth HP drain</li>
+					<li>Battle log with formatted text in the chat tab</li>
+					<li>Battle timer, replay controls (seek, play/pause, switch viewpoint)</li>
+					<li>Long-press moves and Pokémon for power, type, and effectiveness info</li>
+					<li>Optional battle sounds</li>
+					<li>Spectate battles you aren’t playing in</li>
+					<li>Auto-open a new game when ladder search finds a match</li>
+				</ul>
+
+				<h3>Ladder &amp; teambuilder</h3>
+				<ul>
+					<li>Find a battle — pick a format, queue up, cancel search</li>
+					<li>Build teams locally — add Pokémon, moves, items, abilities, natures, EVs</li>
+					<li>Legality checks against common formats</li>
+					<li>Save multiple teams on your device</li>
+				</ul>
+
+				<h3>Settings</h3>
+				<ul>
+					<li>Chat, display, notification, and behavior preferences</li>
+					<li>Autojoin rooms on connect</li>
+					<li>Disconnect from the server manually</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>What’s not implemented (yet)</h2>
+				<p>
+					PS-X is not a pixel-perfect copy of the website.
+					Some things are simplified, some are missing, and some will never need to exist on a phone.
+				</p>
+				<ul>
+					<li><strong>Full web battle engine</strong> — no per-move animation library like the desktop client; effects are generic but readable</li>
+					<li><strong>Double battles UI</strong> — may work server-side, but the layout is built for singles</li>
+					<li><strong>Upload teams to the server</strong> (<code>/utm</code>) — teams are stored on your device, not synced to your PS account</li>
+					<li><strong>Team folders, export/import, starred formats</strong> — basic teambuilder only</li>
+					<li><strong>Command autocomplete</strong> — no tab-completion for slash commands while typing</li>
+					<li><strong>Per-room highlight lists</strong> — global custom words only</li>
+					<li><strong>Full tournament browser</strong> — tournament panel in rooms is partial</li>
+					<li><strong>In-app YouTube / Twitch embeds</strong> — links open externally</li>
+					<li><strong>Custom server URL</strong> — connects to the default Showdown server only</li>
+					<li><strong>iOS / App Store / Play Store</strong> — Android APK sideload only for now</li>
+					<li><strong>Block PMs, friends list, full mod tools</strong> — core moderation exists; some social features from the web client don’t</li>
+				</ul>
+				<p>
+					If you rely on a specific web feature, try it — many things work through slash commands even without a dedicated button.
+					If it’s missing, it might be on the roadmap below.
+				</p>
+			</section>
+
+			<section>
+				<h2>What’s planned</h2>
+				<p>Development is ongoing. Priorities shift based on what players ask for, but the general direction looks like this:</p>
+
+				<h3>Near term</h3>
+				<ul>
+					<li>Polish battles — richer animations, undo button, better double-battle support</li>
+					<li>Chat quality of life — search in room, message drafts, favorite rooms</li>
+					<li>Mobile-native features — “your turn” alerts, return-to-battle bar, haptics</li>
+					<li>Teambuilder — export/import teams, default team per format, server upload</li>
+					<li>Format options — best-of-3, Tera preview toggles, starred formats on ladder search</li>
+				</ul>
+
+				<h3>Later</h3>
+				<ul>
+					<li>Global tournament browser</li>
+					<li>Replay download and sharing improvements</li>
+					<li>Command autocomplete and deeper HTML page support</li>
+					<li>Play Store release (if/when signing and policy work is done)</li>
+					<li>iOS — possible, but not committed</li>
+				</ul>
+				<p>
+					There is no public issue tracker on this site yet.
+					The app improves in bursts — when something breaks or enough people ask for the same thing, it tends to move up the list.
+				</p>
+			</section>
+
+			<section>
+				<h2>Suggestions &amp; bug reports</h2>
+				<p>
+					<strong>Feedback is welcome.</strong> PS-X is built for people who actually play on their phones,
+					and the best ideas usually come from players, not from a roadmap doc.
+				</p>
+				<p>When you report something, these details help a lot:</p>
+				<ul>
+					<li>What you were trying to do</li>
+					<li>What you expected vs. what happened</li>
+					<li>Your app version (shown on the download page and in Settings → About)</li>
+					<li>Phone model and Android version, if it’s a device-specific bug</li>
+					<li>Screenshots or screen recordings, if you can</li>
+				</ul>
+				<p>
+					Send suggestions and bugs to <strong>p9</strong> (however you normally reach the developer —
+					Discord, PS PM, GitHub, etc.).
+					There’s no formal support channel yet; responses may take a while, but everything gets read.
+				</p>
+				<p>
+					Please don’t report bugs to Smogon or the official Showdown staff — they don’t maintain this app.
+					Server-side outages, ladder issues, and ban appeals still go through
+					<a href="https://play.pokemonshowdown.com/" target="_blank" rel="noopener">play.pokemonshowdown.com</a>.
+				</p>
+			</section>
+
+			<section>
+				<h2>A few honest notes</h2>
+				<ul>
+					<li><strong>Unofficial.</strong> Not affiliated with Pokémon Showdown, Smogon, Nintendo, Game Freak, or The Pokémon Company.</li>
+					<li><strong>Sideloading.</strong> You install the APK yourself. Android may ask you to allow installs from unknown sources.</li>
+					<li><strong>Updates.</strong> Check this site for new APKs. The app does not auto-update from a store yet.</li>
+					<li><strong>Account safety.</strong> Use the same caution you would on any third-party client. When in doubt, log in on the official website.</li>
+				</ul>
+			</section>
+
+			<section class="article-cta">
+				<h2>Try it</h2>
+				<p>Current release: <strong>v1.1.0</strong> (~55 MB, works on most Android phones from the last decade).</p>
+				<a class="btn" href="index.html">Download PS-X</a>
+			</section>
+		</article>
+
+		<footer class="footer">
+			<p>Made by p9</p>
+			<p>Unofficial. Not affiliated with Pokémon Showdown.</p>
+			<p><a href="https://play.pokemonshowdown.com/" target="_blank" rel="noopener">play.pokemonshowdown.com</a></p>
+		</footer>
+	</main>
+</body>
+</html>
